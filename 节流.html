@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">my app</div>
+  <script>
+    function throttle(fn, wait) {
+      var pre = Date.now();
+      console.log(pre, "-------1");
+      return function () {
+          var context = this;
+          var args = arguments;
+          var now = Date.now();
+          console.log(now, "------2");
+          if (now - pre >= wait) {
+              // fn.apply(context, args);
+              fn()
+              pre = Date.now();
+          }
+      };
+    }
+
+    function handle() {
+        console.log('测试节流通过');
+    }
+
+    // throttle(handle, 1000);
+    document.getElementById("app").addEventListener("click", throttle(handle, 3000));
+
+    // const index = 3;
+    // const arr1 = [1,2,3];
+    // let str = ``;
+    // for(let ind = 1; ind <= index; ind++) {
+    //   str += `...arr1,`
+    // }
+    // let string = `[${str}]`
+    // console.log('string :>> ', `${string}`);
+    // console.log('str :>> ', str);
+
+
+    // const index = 4;
+    // const arr1 = [1,2,3,];
+    // let newArr = [];
+    // for(let ind = 1; ind <= index; ind++) {
+    //   newArr = [...newArr,...arr1]
+    // }
+    // console.log('newArr :>> ', newArr.join(''));
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">my app</div>
+  <script>
+    function Parent() {
+      console.log('I am Parent :>> ');
+    }
+    var child_1 = new Parent();
+    console.log('Parent :>> ', Parent);
+    console.log('Parent.prototype :>> ', Parent.prototype);
+    console.log('child_1 :>> ', child_1);
+    console.log('child_1.__proto__ :>> ', child_1.__proto__);
+    console.log('Parent.prototype === child_1.__proto__ :>> ', Parent.prototype === child_1.__proto__);
+    //
+    //
+    //
+    //
+    //
+    //
+    function test() {
+      console.log('I am test :>> ');
+    }
+    console.log('test.__proto__ :>> ', test.__proto__);
+    console.log('Function.prototype :>> ', Function.prototype);
+    console.log('test.__proto__ === Function.prototype :>> ', test.__proto__ === Function.prototype);
+  </script>
+</body>
+</html>
